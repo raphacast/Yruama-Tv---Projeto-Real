@@ -67,12 +67,36 @@ function subirTela() {
 
 }
 
+var homeMob= document.querySelector('nav .hm-mob')
+homeMob.addEventListener('click', subirTela)
+
+function subirTela() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
+}
+
 var plano= document.querySelector('nav .pl')
 plano.addEventListener('click', planos)
 
 function planos() {
     window.scrollTo({
         top: 1172,
+        left: 0,
+        behavior: 'smooth'
+    });
+
+}
+
+var planoMob= document.querySelector('nav .pl-mob')
+planoMob.addEventListener('click', planos)
+
+function planos() {
+    window.scrollTo({
+        top: 672,
         left: 0,
         behavior: 'smooth'
     });
@@ -121,5 +145,34 @@ animeScroll();
 if(target.length){
 window.addEventListener('scroll', debouce(function(){
     animeScroll();
-    console.log('asasaas')
+    
 }, 200))};
+
+
+let menu = document.getElementById('menu-hamburguer')
+
+const menucont = document.getElementById('menumobile')
+
+
+menu.addEventListener('click', ()=>{
+    if(menucont.style.width == '200px'){
+        menucont.style.width = '0px'
+        document.querySelector('.menumob').style.display = 'none'
+        
+    }else{
+        menucont.style.width = '200px'
+        document.querySelector('.menumob').style.display = 'flex'
+    }
+    
+})
+let menuInterno = document.getElementById('menu-hamburguer--interno')
+menuInterno.addEventListener('click',()=>{
+    if(menucont.style.width == '0px'){
+        menucont.style.width = '200px'
+        document.querySelector('.menumob').style.display = 'flex'
+    }else{
+        menucont.style.width = '0px'
+        document.querySelector('.menumob').style.display = 'none'
+
+    }
+})
