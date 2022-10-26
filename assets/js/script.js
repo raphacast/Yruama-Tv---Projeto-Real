@@ -1,26 +1,12 @@
-let seta01 = document.querySelector('.seta01')
-
-seta01.addEventListener('click', seta1)
-
-
-function seta1() {
-    if (document.querySelector('.duvidas-txt').style.display == 'flex') {
-        document.querySelector('.duvidas-txt').style.display = 'none'
-        document.querySelector('.duvidas-box').style.backgroundColor = 'transparent'
-        document.querySelector('.seta01').src = 'assets/images/seta-para-baixo.png'
-
-    } else {
-        document.querySelector('.duvidas-txt').style.display = 'flex'
-        document.querySelector('.duvidas-box').style.backgroundColor = '#F82121'
-        document.querySelector('.seta01').src = 'assets/images/seta.png'
-
-    }
-
-}
 
 
 
-            // Slide
+
+
+
+
+
+// Slide
 
 let feed = document.getElementById('seta')
 feed.addEventListener('click', setar)
@@ -55,7 +41,30 @@ function setar2() {
 // Scroll abaixo
 
 
-var home= document.querySelector('nav .hm')
+
+var subir = document.querySelector('.page-top')
+subir.addEventListener('click', subirTela)
+
+function subirTela() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
+}
+window.addEventListener('scroll', botaoscroll)
+function botaoscroll() {
+    if (window.scrollY === 0) {
+        document.querySelector('.page-top').style.bottom = '-50px'
+    } else {
+        document.querySelector('.page-top').style.bottom = '0'
+
+    }
+}
+
+
+var home = document.querySelector('nav .hm')
 home.addEventListener('click', subirTela)
 
 function subirTela() {
@@ -67,7 +76,7 @@ function subirTela() {
 
 }
 
-var homeMob= document.querySelector('nav .hm-mob')
+var homeMob = document.querySelector('nav .hm-mob')
 homeMob.addEventListener('click', subirTela)
 
 function subirTela() {
@@ -79,7 +88,7 @@ function subirTela() {
 
 }
 
-var plano= document.querySelector('nav .pl')
+var plano = document.querySelector('nav .pl')
 plano.addEventListener('click', planos)
 
 function planos() {
@@ -91,7 +100,7 @@ function planos() {
 
 }
 
-var planoMob= document.querySelector('nav .pl-mob')
+var planoMob = document.querySelector('nav .pl-mob')
 planoMob.addEventListener('click', planos)
 
 function planos() {
@@ -105,18 +114,18 @@ function planos() {
 
 // Scroll animation
 
-const debouce = function(func, wait, immediate){
+const debouce = function (func, wait, immediate) {
     let timeout;
-    return function(...args){
+    return function (...args) {
         const context = this;
-        const later = function(){
+        const later = function () {
             timeout = null;
-            if(!immediate) func.apply(context, args);
+            if (!immediate) func.apply(context, args);
         };
         const callNow = immediate && !timeout;
         clearTimeout(timeout);
         timeout - setTimeout(later, wait);
-        if(callNow) func.apply(context, args);
+        if (callNow) func.apply(context, args);
     };
 };
 
@@ -127,26 +136,27 @@ const debouce = function(func, wait, immediate){
 const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
 
-function animeScroll(){
-const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
-target.forEach(function(elemento){
+function animeScroll() {
+    const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
+    target.forEach(function (elemento) {
 
-    if((windowTop) > elemento.offsetTop){
-        elemento.classList.add(animationClass);
-    }else{
-        elemento.classList.remove(animationClass);
+        if ((windowTop) > elemento.offsetTop) {
+            elemento.classList.add(animationClass);
+        } else {
+            elemento.classList.remove(animationClass);
 
-    }
+        }
 
     })
 }
 animeScroll();
 
-if(target.length){
-window.addEventListener('scroll', debouce(function(){
-    animeScroll();
-    
-}, 200))};
+if (target.length) {
+    window.addEventListener('scroll', debouce(function () {
+        animeScroll();
+
+    }, 200))
+};
 
 
 let menu = document.getElementById('menu-hamburguer')
@@ -154,23 +164,23 @@ let menu = document.getElementById('menu-hamburguer')
 const menucont = document.getElementById('menumobile')
 
 
-menu.addEventListener('click', ()=>{
-    if(menucont.style.width == '200px'){
+menu.addEventListener('click', () => {
+    if (menucont.style.width == '200px') {
         menucont.style.width = '0px'
         document.querySelector('.menumob').style.display = 'none'
-        
-    }else{
+
+    } else {
         menucont.style.width = '200px'
         document.querySelector('.menumob').style.display = 'flex'
     }
-    
+
 })
 let menuInterno = document.getElementById('menu-hamburguer--interno')
-menuInterno.addEventListener('click',()=>{
-    if(menucont.style.width == '0px'){
+menuInterno.addEventListener('click', () => {
+    if (menucont.style.width == '0px') {
         menucont.style.width = '200px'
         document.querySelector('.menumob').style.display = 'flex'
-    }else{
+    } else {
         menucont.style.width = '0px'
         document.querySelector('.menumob').style.display = 'none'
 
