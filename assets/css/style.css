@@ -96,7 +96,6 @@ button:hover {
 }
 
 .home-title-body {
-    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -131,6 +130,8 @@ button:hover {
 
 .home {
     height: 100vh;
+    display: flex;
+    align-items: center;
     padding-top: 100px;
 
 
@@ -570,6 +571,7 @@ button:hover {
     top: 0;
     z-index: 999;
     transition: all .5s ease;
+    display: none;
 
 }
 
@@ -697,6 +699,8 @@ button:hover {
 
 
 @media (max-width:599px) {
+
+    
     .home-title h1 {
         font-weight: 400;
         font-size: 45px;
@@ -761,6 +765,8 @@ button:hover {
 }
 
 @media (max-width:513px) {
+
+  
     .home-title h1 {
         font-weight: 400;
         font-size: 45px;
@@ -824,6 +830,8 @@ button:hover {
 
 
 @media (max-width:425px) {
+
+   
     .menu {
         display: none;
 
@@ -843,12 +851,14 @@ button:hover {
     }
     .home .container{
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .home-title h1 {
         font-weight: 400;
-        font-size: 45px;
-        line-height:40px;
+        font-size: 55px;
+        line-height:50px;
         text-align: center;
         padding: 0;
     }
@@ -869,8 +879,8 @@ button:hover {
     }
 
     .home-title-body .button button {
-        padding: 5px;
-        width: 100px;
+        padding: 10px;
+        width: 170px;
     }
 
     .home-parte-2-left {
@@ -894,7 +904,7 @@ button:hover {
     }
 
     .home-img img {
-        width: 300px;
+        width: 400px;
     }
 
     .planos-box {
@@ -937,13 +947,19 @@ button:hover {
 }
 
 @media (max-width:360px) {
+    .menumobile{
+        display:block;
+    }
+   
     .home .container{
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .home-title h1 {
         font-weight: 400;
-        font-size: 45px;
-        line-height:40px;
+        font-size: 55px;
+        line-height:50px;
         text-align: center;
         padding: 0;
     }
@@ -964,8 +980,8 @@ button:hover {
     }
 
     .home-title-body .button button {
-        padding: 5px;
-        width: 100px;
+        padding: 10px;
+        width: 170px;
     }
 
     .home-parte-2-left {
@@ -999,7 +1015,7 @@ button:hover {
     }
 
     .home-img img {
-        width: 300px;
+        width: 400px;
     }
 
     .planos-box {
