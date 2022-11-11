@@ -93,7 +93,7 @@ plano.addEventListener('click', planos)
 
 function planos() {
     window.scrollTo({
-        top: 1172,
+        top: 1056,
         left: 0,
         behavior: 'smooth'
     });
@@ -101,9 +101,9 @@ function planos() {
 }
 
 var planoMob = document.querySelector('nav .pl-mob')
-planoMob.addEventListener('click', planos)
+planoMob.addEventListener('click', planoss)
 
-function planos() {
+function planoss() {
     window.scrollTo({
         top: 672,
         left: 0,
